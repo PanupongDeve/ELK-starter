@@ -1,0 +1,17 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./apache2:/etc/apache2
+    ports:
+      - 8080:80  
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    external:
+      name: elasticsearch_elastic

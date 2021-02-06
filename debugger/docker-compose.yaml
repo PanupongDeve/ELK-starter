@@ -1,0 +1,11 @@
+version: '2.2'
+services: 
+  debugger:
+    image: panupongdeve/debugger:latest
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    external:
+      name: elasticsearch_elastic
