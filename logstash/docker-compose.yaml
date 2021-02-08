@@ -2,14 +2,16 @@ version: '2'
 services:
   logstash:
 
-    image: docker.elastic.co/logstash/logstash:7.10.2
+    build: .
     # volumes:
       # - ./pipeline/logstash_product.conf:/usr/share/logstash/pipeline/logstash_product.conf
       # - ./pipeline/logstash_products_with_features_features.conf:/usr/share/logstash/pipeline/logstash_products_with_features_features.conf
       # - ./pipeline/logstash_products_with_features_products.conf:/usr/share/logstash/pipeline/logstash_products_with_features_products.conf
+      # - ./pipeline/logstash_network_traffic_data.conf:/usr/share/logstash/pipeline/logstash_network_traffic_data.conf
       # - ./data-example/products.csv:/usr/share/logstash/data/products.csv
       # - ./data-example/products_with_features_features.csv:/usr/share/logstash/data/products_with_features_features.csv
       # - ./data-example/products_with_features_products.csv:/usr/share/logstash/data/products_with_features_products.csv
+      # - ./data-example/network_traffic_data.json:/usr/share/logstash/data/network_traffic_data.json
     # ports:
     #   - 5601:5601
     networks:
