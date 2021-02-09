@@ -4,6 +4,9 @@ services:
 
     build: .
     # volumes:
+      # - ./pipeline/csv-filter/csv_file.conf:/usr/share/logstash/pipeline/csv_file.conf
+      # - ./pipeline/mutuate-filter/csv_file_mutuate.conf:/usr/share/logstash/pipeline/csv_file_mutuate.conf
+      # - ./data-example/users.csv:/usr/share/logstash/data/users.csv
       # - ./pipeline/logstash_product.conf:/usr/share/logstash/pipeline/logstash_product.conf
       # - ./pipeline/logstash_products_with_features_features.conf:/usr/share/logstash/pipeline/logstash_products_with_features_features.conf
       # - ./pipeline/logstash_products_with_features_products.conf:/usr/share/logstash/pipeline/logstash_products_with_features_products.conf

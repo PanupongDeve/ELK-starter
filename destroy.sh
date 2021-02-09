@@ -1,3 +1,4 @@
+docker-compose -f ./filebeat/docker-compose.yaml down
 docker-compose -f ./kibana/docker-compose.yaml down
 docker-compose -f ./logstash/docker-compose.yaml down
 docker-compose -f ./nginx/docker-compose.yaml down

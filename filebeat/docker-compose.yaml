@@ -1,0 +1,21 @@
+version: '2'
+services:
+  filebeat:
+    build: .
+    environment: 
+      - setup.kibana.host=kibana:5601
+      - output.elasticsearch.hosts=["elasticsearch:9200"]
+    volumes:
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ../nginx/log/nginx:/var/log/nginx
+      # - ./filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+    # ports:
+    #   - 5601:5601
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    external:
+      name: elasticsearch_elastic

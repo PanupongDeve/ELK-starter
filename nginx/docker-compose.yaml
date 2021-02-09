@@ -6,6 +6,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./apache2:/etc/apache2
+      - ./log/nginx:/var/log/nginx
     ports:
       - 8080:80  
     networks:
